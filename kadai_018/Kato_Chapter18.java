@@ -2,26 +2,25 @@ package kadai_018;
 
 abstract public class Kato_Chapter18 {
 	
-	//姓を表すフィールド
-		String familyName = "加藤";
-		//名を表す
-		String givenName = "";
-		//住所を表す
-		String address = "愛知県名古屋市〇×";
+	public String familyName = "加藤"; // 姓を表す
+	public String givenName; // 名を表す
+	public String address = "愛知県名古屋市〇×"; // 住所を表す
 
-		//共通の紹介を出力
-		public void commonIntroduce() {
-			System.out.println("名前は" + familyName + givenName + "です。");
-			System.out.println("住所は" + address + "です。");
-		}
-		
-		//個別の紹介（抽象メソッド）
-		abstract public void eachIntroduce();
-		
-		//紹介を実行するメソッド
-		public void execIntroduce() {
-			commonIntroduce();
-			eachIntroduce();
-		}
+	// 共通の紹介を出力する
+	public void commonIntroduce() {
+		System.out.println("名前は" + this.familyName + this.givenName + "です");
+		System.out.println("住所は" + this.address + "です");
+
+	}
+
+	// 個別の紹介を出力する
+	abstract public void eachIntroduce();
+
+	// 紹介を実行する
+	public void execIntroduce() {
+		commonIntroduce();
+		eachIntroduce();
+		System.out.println();
+	}
 
 }
